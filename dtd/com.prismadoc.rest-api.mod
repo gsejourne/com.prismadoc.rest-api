@@ -9,8 +9,8 @@ PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
 <!--                       SPECIALIZATION OF DECLARED ELEMENTS                        -->
 <!-- ================================================================================ -->
 
-<!--ENTITY % apiref-info-types
-                        "%info-types;"-->
+<!ENTITY % apiref-info-types
+                        "%info-types;">
 
 <!-- ================================================================================ -->
 <!--                              ELEMENT NAME ENTITIES                               -->
