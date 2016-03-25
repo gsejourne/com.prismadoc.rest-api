@@ -56,6 +56,15 @@
 			<xsl:apply-templates/>
 		</section>
 	</xsl:template>
+	<xsl:template match="*[contains(@class, ' topic/dt ')]">
+		<dt>
+			<xsl:call-template name="commonattributes"/>
+			<xsl:if test="@importance = 'required'">
+				<span class="importance required"/>
+			</xsl:if>
+			<xsl:apply-templates/>
+		</dt>
+	</xsl:template>
 	<xsl:template match="*[contains(@class, ' rest-api/fields ')]">
 		<xsl:if test="parent::*[contains(@class, ' rest-api/reqbody ')]">
 			<h3 class="title sectiontitle reqparams">Request Parameters</h3>
@@ -76,33 +85,50 @@
 			</tbody>
 		</table>
 	</xsl:template>
-	<xsl:template match="*[contains(@class, ' topic/dt ')]">
-		<dt>
-			<xsl:call-template name="commonattributes"/>
-			<xsl:if test="@importance = 'required'">
-				<span class="importance required"/>
-			</xsl:if>
-			<xsl:apply-templates/>
-		</dt>
-	</xsl:template>
+	
 	<xsl:template match="*[contains(@class, ' rest-api/field ')]">
+		<xsl:param name="parents"/>
 		<xsl:variable name="fieldID" select="generate-id()"/>
-		<tr class="field" id="{$fieldID}">
+		<xsl:variable name="toggleClass">
+			<xsl:value-of select="$parents"/>
+		</xsl:variable>
+		<xsl:variable name="ancestor_objects">
+			<xsl:for-each select="ancestor::field">
+				<xsl:value-of select="concat(parmname,'.')"/>
+			</xsl:for-each>
+		</xsl:variable>
+		<tr id="{$fieldID}">
+			<xsl:attribute name="class">
+				<xsl:if test="$parents != ''"><xsl:value-of select="$toggleClass"/> hide</xsl:if>
+				<xsl:text> field </xsl:text>
+			</xsl:attribute>
 			<td class="id">
 				<xsl:if test="@importance = 'required'">
 					<span class="importance required"/>
 				</xsl:if>
 				<div class="parmname">
 					<xsl:call-template name="commonattributes"/>
-					<xsl:apply-templates select="parmname"/>
+					<xsl:value-of select="$ancestor_objects"/><xsl:apply-templates select="parmname"/>
 				</div>
 				<div class="type"><xsl:apply-templates select="type" mode="api"/></div>
 			</td>
 			<td class="descr">
 				<xsl:apply-templates select="descr"/>
-				<xsl:apply-templates select="fields"/>
+				<xsl:if test="fields">
+					<p><span class="toggle plus" onclick="javascript:toggle('{$fieldID}');"
+						title="Toggle object definitions">
+						</span></p>
+				</xsl:if>
 			</td>
 		</tr>
+		<xsl:apply-templates select="fields/*">
+			<xsl:with-param name="parents">
+				<xsl:value-of select="$toggleClass"/>
+				<xsl:text> </xsl:text>
+				<xsl:value-of select="$fieldID"/>
+				<xsl:text> </xsl:text>
+			</xsl:with-param>
+		</xsl:apply-templates>
 	</xsl:template>
 	<xsl:template match="*[contains(@class, ' rest-api/type ')]" mode="api">
 		<samp class="ph codeph api">
@@ -151,6 +177,22 @@
 	</xsl:template>
 	<xsl:template match="*[contains(@class, ' rest-api/descr ')]">
 		<xsl:apply-templates/>
+	</xsl:template>
+	<xsl:template match="*[contains(@class, ' rest-api/apibody ')]">
+		<xsl:apply-templates/>
+		<script>
+			<xsl:text disable-output-escaping="yes">function toggle(id) {
+				var list = document.getElementsByClassName(id);
+				for (i = 0; i &lt; list.length; i++) {
+				var el = document.getElementById(list[i].id);
+				if (el.style.display == 'none') {
+				el.style.display = 'table-row';
+				} else {
+				el.style.display = 'none';
+				}
+				}
+			};</xsl:text>
+		</script>
 	</xsl:template>
 	
 </xsl:stylesheet>

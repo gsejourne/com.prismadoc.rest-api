@@ -128,5 +128,11 @@ table.fields tr.field td.descr {
 	margin: 0;
 	
 }
+.hide {display: none;}
 
-
+.toggle.icon {
+	font-weight: bold;
+	font-size: 2em;
+	color: #297aa3;
+	cursor: pointer;
+}
