@@ -1,13 +1,18 @@
 <!-- ================================================================================ -->
 <!--  Refer to this file by the following public identifier or an 
       appropriate system identifier 
-PUBLIC "-//GSEJOURNE//DTD DITA API Reference (pr-d sw-d)//EN"
+PUBLIC "-//GSEJOURNE//DTD DITA DITA REST API Specialization  (hi-d pr-d sw-d ut-d)//EN"
       Delivered as file "com.prismadoc.rest-api.dtd"  -->
 <!-- ================================================================================ -->
 
 <!-- ================================================================================ -->
 <!--                            DOMAIN ENTITY DECLARATIONS                            -->
 <!-- ================================================================================ -->
+
+<!ENTITY % hi-d-dec
+  PUBLIC "-//OASIS//ENTITIES DITA 1.2 Highlight Domain//EN"
+         "../../../dtd/base/dtd/highlightDomain.ent">
+%hi-d-dec;
 
 <!ENTITY % pr-d-dec
   PUBLIC "-//OASIS//ENTITIES DITA 1.2 Programming Domain//EN"
@@ -19,6 +24,11 @@ PUBLIC "-//GSEJOURNE//DTD DITA API Reference (pr-d sw-d)//EN"
          "../../../dtd/technicalContent/dtd/softwareDomain.ent">
 %sw-d-dec;
 
+<!ENTITY % ut-d-dec
+  PUBLIC "-//OASIS//ENTITIES DITA 1.2 Utilities Domain//EN"
+         "../../../dtd/base/dtd/utilitiesDomain.ent">
+%ut-d-dec;
+
 <!-- ================================================================================ -->
 <!--                                DOMAIN EXTENSIONS                                 -->
 <!-- ================================================================================ -->
@@ -28,6 +38,7 @@ PUBLIC "-//GSEJOURNE//DTD DITA API Reference (pr-d sw-d)//EN"
                          %sw-d-pre;
                         ">
 <!ENTITY % ph           "ph |
+                         %hi-d-ph; |
                          %pr-d-ph; |
                          %sw-d-ph;
                         ">
@@ -35,7 +46,8 @@ PUBLIC "-//GSEJOURNE//DTD DITA API Reference (pr-d sw-d)//EN"
                          %pr-d-dl;
                         ">
 <!ENTITY % fig          "fig |
-                         %pr-d-fig;
+                         %pr-d-fig; |
+                         %ut-d-fig;
                         ">
 <!ENTITY % keyword      "keyword |
                          %pr-d-keyword; |
@@ -57,7 +69,7 @@ PUBLIC "-//GSEJOURNE//DTD DITA API Reference (pr-d sw-d)//EN"
 <!--                              TOPIC NESTING OVERRIDE                              -->
 <!-- ================================================================================ -->
 
-<!ENTITY % com.prismadoc.rest-api-info-types
+<!ENTITY % reference-info-types
                         "no-topic-nesting">
 
 <!-- ================================================================================ -->
@@ -65,8 +77,10 @@ PUBLIC "-//GSEJOURNE//DTD DITA API Reference (pr-d sw-d)//EN"
 <!-- ================================================================================ -->
 
 <!ENTITY included-domains
-                        "&pr-d-att;
+                        "&hi-d-att;
+                         &pr-d-att;
                          &sw-d-att;
+                         &ut-d-att;
                         ">
 
 <!-- ================================================================================ -->
@@ -88,9 +102,15 @@ PUBLIC "-//GSEJOURNE//DTD DITA API Reference (pr-d sw-d)//EN"
          "com.prismadoc.rest-api.mod">
 %com.prismadoc.rest-api-typemod;
 
+
 <!-- ================================================================================ -->
 <!--                            DOMAIN ELEMENT INTEGRATION                            -->
 <!-- ================================================================================ -->
+
+<!ENTITY % hi-d-def
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Highlight Domain//EN"
+         "../../../dtd/base/dtd/highlightDomain.mod">
+%hi-d-def;
 
 <!ENTITY % pr-d-def
   PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Programming Domain//EN"
@@ -101,5 +121,10 @@ PUBLIC "-//GSEJOURNE//DTD DITA API Reference (pr-d sw-d)//EN"
   PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Software Domain//EN"
          "../../../dtd/technicalContent/dtd/softwareDomain.mod">
 %sw-d-def;
+
+<!ENTITY % ut-d-def
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Utilities Domain//EN"
+         "../../../dtd/base/dtd/utilitiesDomain.mod">
+%ut-d-def;
 
 <!-- ================================= End of file ================================== -->

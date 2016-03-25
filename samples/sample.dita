@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE apiref PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN" "../dtd/com.prismadoc.rest-api.dtd">
+<!DOCTYPE apiref PUBLIC "-//GSEJOURNE//DTD DITA DITA REST API Specialization  (hi-d pr-d sw-d ut-d)//EN" "dtd/com.prismadoc.rest-api.dtd">
 <apiref id="reference_i5l_fc1_kv">
   <title>Test Title</title>
   <shortdesc>This resource returns information about the job ID.</shortdesc>

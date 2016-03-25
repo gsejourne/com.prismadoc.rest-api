@@ -1,5 +1,4 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-  <public publicId="-//GSEJOURNE//DTD DITA API Reference (pr-d sw-d)//EN" uri="dtd/com.prismadoc.rest-api.dtd" />
-  <public publicId="-//GSEJOURNE//ELEMENTS DITA API Reference//EN" uri="dtd/com.prismadoc.rest-api.mod" />
+  <public publicId="-//GSEJOURNE//DTD DITA DITA REST API Specialization  (hi-d pr-d sw-d ut-d)//EN" uri="dtd/com.prismadoc.rest-api.dtd" />
 </catalog>
