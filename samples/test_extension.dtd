@@ -1,0 +1,130 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT apiref (title,shortdesc,apibody)>
+<!ATTLIST apiref
+  xmlns CDATA #FIXED ''
+  xmlns:ditaarch CDATA #FIXED 'http://dita.oasis-open.org/architecture/2005/'
+  class CDATA #REQUIRED
+  domains CDATA #REQUIRED
+  id NMTOKEN #REQUIRED
+  ditaarch:DITAArchVersion CDATA #REQUIRED>
+
+<!ELEMENT title EMPTY>
+<!ATTLIST title
+  xmlns CDATA #FIXED ''
+  class CDATA #REQUIRED>
+
+<!ELEMENT shortdesc EMPTY>
+<!ATTLIST shortdesc
+  xmlns CDATA #FIXED ''
+  class CDATA #REQUIRED>
+
+<!ELEMENT apibody (request,response)>
+<!ATTLIST apibody
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT request (http,example,reqbody)>
+<!ATTLIST request
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT response (http,example,resbody)>
+<!ATTLIST response
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT reqbody (parameters)>
+<!ATTLIST reqbody
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT resbody (fields)>
+<!ATTLIST resbody
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT parameters (param)+>
+<!ATTLIST parameters
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT fields (parml)>
+<!ATTLIST fields
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT param (name,type,descr)>
+<!ATTLIST param
+  xmlns CDATA #FIXED ''
+  class CDATA #REQUIRED
+  importance NMTOKEN #IMPLIED>
+
+<!ELEMENT parml (plentry)+>
+<!ATTLIST parml
+  xmlns CDATA #FIXED ''
+  class CDATA #REQUIRED>
+
+<!ELEMENT name (#PCDATA)>
+<!ATTLIST name
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT type (#PCDATA)>
+<!ATTLIST type
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT plentry (pt,pd)>
+<!ATTLIST plentry
+  xmlns CDATA #FIXED ''
+  class CDATA #REQUIRED>
+
+<!ELEMENT pt (#PCDATA)>
+<!ATTLIST pt
+  xmlns CDATA #FIXED ''
+  class CDATA #REQUIRED>
+
+<!ELEMENT pd (#PCDATA)>
+<!ATTLIST pd
+  xmlns CDATA #FIXED ''
+  class CDATA #REQUIRED>
+
+<!ELEMENT http (return|(verb,resource,example))>
+<!ATTLIST http
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT return (status)+>
+<!ATTLIST return
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT verb EMPTY>
+<!ATTLIST verb
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT resource EMPTY>
+<!ATTLIST resource
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT status (code,msg,format,descr)>
+<!ATTLIST status
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT code (#PCDATA)>
+<!ATTLIST code
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT msg (#PCDATA)>
+<!ATTLIST msg
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT format (#PCDATA)>
+<!ATTLIST format
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT example (#PCDATA|codeblock)*>
+<!ATTLIST example
+  xmlns CDATA #FIXED ''
+  class CDATA #REQUIRED
+  type NMTOKEN #IMPLIED>
+
+<!ELEMENT codeblock (#PCDATA)>
+<!ATTLIST codeblock
+  xmlns CDATA #FIXED ''
+  class CDATA #REQUIRED
+  xml:space NMTOKEN #REQUIRED>
+
+<!ELEMENT descr (#PCDATA)>
+<!ATTLIST descr
+  xmlns CDATA #FIXED ''>

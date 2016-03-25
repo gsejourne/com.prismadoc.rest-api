@@ -1,0 +1,52 @@
+<!DOCTYPE html5>
+<html>
+    <head>
+        <title>Sample output for REST API resource</title>
+        <link rel="stylesheet" type="text/css" href="css/api.css"/>
+    </head>
+    <body>
+        <table class="parameters">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="field">
+                    <td class="id">
+                        <span class="importance required"> </span>    
+                       <div class="parmname">id</div>
+                        <div class="type">string</div>
+                    </td>
+                    <td class="desc">-- </td>
+                </tr>
+                <tr class="field">
+                    <td class="id">
+                        <span class="importance optional"> </span>    
+                        <div class="parmname">object</div>
+                        <div class="type">string</div>
+                    </td>
+                    <td class="desc">Value is "<b>balance_transaction</b>" </td>
+                </tr>
+                <tr class="field">
+                    <td class="id">
+                        <span class="importance optional"> </span>    
+                        <div class="parmname">amount</div>
+                        <div class="type">integer</div>
+                    </td>
+                    <td class="desc">Gross amount of the transacion, in cents.</td>
+                </tr>
+                <tr class="field">
+                    <td class="id">
+                        <span class="importance required"> </span>    
+                        <div class="parmname">available_on</div>
+                        <div class="type">timestamp</div>
+                    </td>
+                    <td class="desc">The date the transaction net's funds will become
+                    available in the Stripe balance.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

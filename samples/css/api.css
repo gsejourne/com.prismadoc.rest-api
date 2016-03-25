@@ -1,0 +1,57 @@
+table.parameters {
+    width: 100%;
+    border: 0;
+    font-family: medium-content-sans-serif-font, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Arial, sans-serif;
+    border-spacing: 0;
+    padding-left: 3em;
+}
+table.parameters th {
+    text-align: left;
+    display: none;
+}
+table.parameters tr.field {
+
+}
+table.parameters tr.field td.id{
+    border-top: 1px solid #CCC;
+    min-width: 250px;
+    padding: 10px;
+    text-align: right;
+    padding-right: 40px;
+}
+.field  .id > span.importance {
+    float: left;
+    font-style: italic;
+    color: #ccc;
+}
+.field  .id > span.required:before {
+    content: "Required";
+}
+.field .id div.parmname {
+    font-weight: bold;
+    text-align: right;
+    color: #333;
+    display: inline-block;
+    line-height: 22pt;
+    font-size: 1em;
+}
+.field .id div.type {
+    color: #888;
+    font-size: .9em;
+}
+.field .id div.type:before {
+    content: "[";
+}
+.field .id div.type:after {
+    content: "]";
+}
+table.parameters tr.field td.desc {
+       border-top: 1px solid #CCC;
+       padding: 10px;
+       color: #555;
+       font-size: .9em;
+       vertical-align: top;
+       text-align: left;
+}
+
+

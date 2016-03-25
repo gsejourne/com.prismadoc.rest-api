@@ -1,0 +1,105 @@
+<!-- ================================================================================ -->
+<!--  Refer to this file by the following public identifier or an 
+      appropriate system identifier 
+PUBLIC "-//GSEJOURNE//DTD DITA API Reference (pr-d sw-d)//EN"
+      Delivered as file "com.prismadoc.rest-api.dtd"  -->
+<!-- ================================================================================ -->
+
+<!-- ================================================================================ -->
+<!--                            DOMAIN ENTITY DECLARATIONS                            -->
+<!-- ================================================================================ -->
+
+<!ENTITY % pr-d-dec
+  PUBLIC "-//OASIS//ENTITIES DITA 1.2 Programming Domain//EN"
+         "../../../dtd/technicalContent/dtd/programmingDomain.ent">
+%pr-d-dec;
+
+<!ENTITY % sw-d-dec
+  PUBLIC "-//OASIS//ENTITIES DITA 1.2 Software Domain//EN"
+         "../../../dtd/technicalContent/dtd/softwareDomain.ent">
+%sw-d-dec;
+
+<!-- ================================================================================ -->
+<!--                                DOMAIN EXTENSIONS                                 -->
+<!-- ================================================================================ -->
+
+<!ENTITY % pre          "pre |
+                         %pr-d-pre; |
+                         %sw-d-pre;
+                        ">
+<!ENTITY % ph           "ph |
+                         %pr-d-ph; |
+                         %sw-d-ph;
+                        ">
+<!ENTITY % dl           "dl |
+                         %pr-d-dl;
+                        ">
+<!ENTITY % fig          "fig |
+                         %pr-d-fig;
+                        ">
+<!ENTITY % keyword      "keyword |
+                         %pr-d-keyword; |
+                         %sw-d-keyword;
+                        ">
+
+<!-- ================================================================================ -->
+<!--                           DOMAIN ATTRIBUTE EXTENSIONS                            -->
+<!-- ================================================================================ -->
+
+<!ENTITY % props-attribute-extensions
+                        "
+                        ">
+<!ENTITY % base-attribute-extensions
+                        "
+                        ">
+
+<!-- ================================================================================ -->
+<!--                              TOPIC NESTING OVERRIDE                              -->
+<!-- ================================================================================ -->
+
+<!ENTITY % com.prismadoc.rest-api-info-types
+                        "no-topic-nesting">
+
+<!-- ================================================================================ -->
+<!--                            DOMAINS ATTRIBUTE OVERRIDE                            -->
+<!-- ================================================================================ -->
+
+<!ENTITY included-domains
+                        "&pr-d-att;
+                         &sw-d-att;
+                        ">
+
+<!-- ================================================================================ -->
+<!--                            TOPIC ELEMENT INTEGRATION                             -->
+<!-- ================================================================================ -->
+
+<!ENTITY % topic-type
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Topic//EN"
+         "../../../dtd/base/dtd/topic.mod">
+%topic-type;
+
+<!ENTITY % reference-typemod
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Reference//EN"
+         "../../../dtd/technicalContent/dtd/reference.mod">
+%reference-typemod;
+
+<!ENTITY % com.prismadoc.rest-api-typemod
+  PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
+         "com.prismadoc.rest-api.mod">
+%com.prismadoc.rest-api-typemod;
+
+<!-- ================================================================================ -->
+<!--                            DOMAIN ELEMENT INTEGRATION                            -->
+<!-- ================================================================================ -->
+
+<!ENTITY % pr-d-def
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Programming Domain//EN"
+         "../../../dtd/technicalContent/dtd/programmingDomain.mod">
+%pr-d-def;
+
+<!ENTITY % sw-d-def
+  PUBLIC "-//OASIS//ELEMENTS DITA 1.2 Software Domain//EN"
+         "../../../dtd/technicalContent/dtd/softwareDomain.mod">
+%sw-d-def;
+
+<!-- ================================= End of file ================================== -->

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE apiref PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN" "../dtd/com.prismadoc.rest-api.dtd">
+<apiref id="reference_i5l_fc1_kv">
+  <title>Test Title</title>
+  <shortdesc>This resource returns information about the job ID.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>handler</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <apibody>
+    <request>
+      <http>
+        <verb>GET</verb>
+        <resource>/test/</resource>
+        <headers>
+          <parml>
+            <plentry>
+              <pt></pt>
+              <pd></pd>
+            </plentry>
+          </parml>
+        </headers>
+      </http>
+      <example>
+        <title>cUrl Example</title>
+        <codeblock>curl -H 'Accept: application/json'</codeblock>
+      </example>
+      <reqbody>
+        <parameters>
+          <field importance="required">
+            <parmname>action</parmname>
+            <type format="str"/>
+            <descr>Sets the action to perform</descr>
+          </field>
+          <field>
+            <parmname>limit</parmname>
+            <type format="int"/>
+            <descr>Sets the max number of results</descr>
+          </field>
+        </parameters>
+      </reqbody>
+    </request>
+    <response>
+      <http>
+        <return>
+          <status>
+            <code>401</code>
+            <msg>Unauthorized</msg>
+            <format>text</format>
+            <descr>Authentication failed.</descr>
+          </status>
+          <status>
+            <code>201</code>
+            <msg>Created</msg>
+            <format>JSON</format>
+            <descr>Resource was created successfully.</descr>
+          </status>
+          <status>
+            <code>200</code>
+            <msg>OK</msg>
+            <format>JSON</format>
+            <descr>Request succeeded.</descr>
+          </status>
+        </return>
+      </http>
+      <example>
+        <title>JSON Example</title>
+        {"test": "foo"}
+      </example>
+      <resbody>
+        <fields>
+          <field>
+            <parmname>id</parmname>
+            <type format="str"/>
+            <descr>Unique ID of the field</descr>
+          </field>
+        </fields>
+      </resbody>
+    </response>
+  </apibody>
+</apiref>
