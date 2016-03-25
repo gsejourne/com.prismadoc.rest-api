@@ -1,0 +1,132 @@
+body {
+    font-family: medium-content-sans-serif-font, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Arial, sans-serif;
+}
+.indexterm {
+	display: none;
+}
+h2, h3, h4 {
+	color: #3399CC;
+}
+h3.reqparams, h3.resparams {
+	color: #3399CC;
+	margin-left: 3em;
+}
+a, a:visited {
+	color: #3399CC;
+}
+a:hover {
+	color: #297aa3;
+}
+table.fields {
+    width: 100%;
+    border: 0;
+    font-family: medium-content-sans-serif-font, 'Garuda', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Arial, sans-serif;
+    border-spacing: 0;
+    padding-left: 3em;
+}
+table.fields th {
+    text-align: left;
+    font-weight: bold;
+    padding: 10px;
+}
+table.fields th:first-child {
+    text-align: right;
+    font-weight: bold;
+}
+table.fields tr.field {
+
+}
+table.fields tr.field td.id{
+    border-top: 1px solid #CCC;
+    min-width: 250px;
+    width: 20%;
+    padding: 10px;
+    text-align: right;
+    padding-right: 40px;
+}
+.field  .id > span.importance, .dt> span.importance {
+    float: left;
+    font-style: italic;
+    color: #ccc;
+    font-weight: normal;
+}
+.field  .id > span.required:before, .dt > span.required:before {
+    content: "Required";
+}
+.field .id div.parmname {
+    font-weight: bold;
+    text-align: right;
+    color: #333;
+    display: inline-block;
+    line-height: 22pt;
+    font-size: 1em;
+}
+.field .id div.type {
+    color: #888;
+    font-size: .9em;
+}
+.field .id div.type:before {
+    content: "[";
+}
+.field .id div.type:after {
+    content: "]";
+}
+table.fields tr.field td.descr {
+       border-top: 1px solid #CCC;
+       padding: 10px;
+       color: #555;
+       font-size: .9em;
+       vertical-align: top;
+       text-align: left;
+       width: 80%;
+}
+.http {
+	margin-left: 3em;
+	padding: 10px;
+}
+.http .parml {
+	
+}
+.http .parml .dt {
+	border-top: 1px solid #CCC;
+    min-width: 200px;
+    width: 20%;
+    padding: 10px;
+    text-align: right;
+    padding-right: 40px;
+    font-weight: bold;
+    text-align: right;
+    color: #333;
+    display: inline-block;
+    line-height: 22pt;
+    font-size: 1em;
+}
+.http .parml .dd {
+	display: inline-block;
+	border-top: 1px solid #CCC;
+	padding: 10px;
+	line-height: 22pt;
+	color: #555;
+	font-size: .9em;
+	vertical-align: top;
+	text-align: left;
+	width: 70%;
+}
+.http .title {
+	
+}
+.example {
+	border: 1px solid #555;
+	border-radius: 5px;
+	padding: 10px;
+	margin-left: 3em;
+	background-color: #ececec;
+}
+.example .title {
+	font-size: 1.1em;
+	color: #297aa3;
+	margin: 0;
+	
+}
+
+

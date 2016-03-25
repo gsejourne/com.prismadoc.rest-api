@@ -2,4 +2,5 @@
 <plugin id="org.dita.specialization.com.prismadoc.rest-api">
   <feature extension="dita.specialization.catalog.relative" type="file" value="catalog-dita.xml" />
   <feature extension="dita.xsl.xhtml" file="xsl/api.xsl" type="file"/>
+  <feature extension="dita.conductor.target.relative" file="conductor.xml" type="file"/>
 </plugin>

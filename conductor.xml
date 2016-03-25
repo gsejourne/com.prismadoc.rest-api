@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="com.prismadoc.rest-api">
+    <target name="copy-css-api" depends="copy-css" description="Copy API plugin styles">
+        <echo>* [REST-API Plugin]: Copying CSS for REST-API specialization</echo>
+        <mkdir dir="${output.css.path}"/>
+        <copy todir="${output.css.path}">
+            <fileset dir="${dita.plugin.org.dita.specialization.com.prismadoc.rest-api}/css" includes="**"/>
+        </copy>
+    </target>
+</project>

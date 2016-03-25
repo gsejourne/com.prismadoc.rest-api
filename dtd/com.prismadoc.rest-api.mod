@@ -56,11 +56,10 @@ PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
 <!ELEMENT apibody (request,response)>
 <!ELEMENT request (http,example+,reqbody)>
 <!ELEMENT response (http,example,resbody)>
-<!ELEMENT reqbody (parameters)>
+<!ELEMENT reqbody (fields)?>
 <!ELEMENT resbody (fields)?>
-<!ELEMENT parameters (field)+>
 <!ELEMENT fields (field)+>
-<!ELEMENT field (parmname,type,(descr|fields+))>
+<!ELEMENT field (parmname,type,descr?,fields*)>
 <!ELEMENT type EMPTY>
 <!ELEMENT http (return|(verb,resource,headers))>
 <!ELEMENT headers (parml)+ >
@@ -76,65 +75,62 @@ PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
 <!--                      SPECIALIZATION ATTRIBUTE DECLARATIONS                       -->
 <!-- ================================================================================ -->
 
-<!ATTLIST apiref %global-atts; class CDATA "- topic/topic reference/reference com.prismadoc.rest-api/apiref ">
+<!ATTLIST apiref %global-atts; class CDATA "- topic/topic reference/reference rest-api/apiref ">
 
-<!ATTLIST apibody class CDATA "- topic/body reference/refbody com.prismadoc.rest-api/apibody ">
+<!ATTLIST apibody class CDATA "- topic/body reference/refbody rest-api/apibody ">
 <!ATTLIST request
-  class CDATA "- topic/body com.prismadoc.rest-api/request "
+  class CDATA "- topic/body rest-api/request "
   xmlns CDATA #FIXED ''>
 <!ATTLIST response
-  class CDATA "- topic/body com.prismadoc.rest-api/request "
+  class CDATA "- topic/body rest-api/request "
   xmlns CDATA #FIXED ''>
 <!ATTLIST reqbody
-  class CDATA "- topic/section com.prismadoc.rest-api/reqbody "
+  class CDATA "- topic/section rest-api/reqbody "
   format (query|json) #IMPLIED
   xmlns CDATA #FIXED ''>
 <!ATTLIST resbody
-  class CDATA "- topic/section com.prismadoc.rest-api/resbody "
-  xmlns CDATA #FIXED ''>
-<!ATTLIST parameters
-  class CDATA "- topic/parml com.prismadoc.rest-api/parameters "
+  class CDATA "- topic/section rest-api/resbody "
   xmlns CDATA #FIXED ''>
 <!ATTLIST fields
-  class CDATA "- topic/parml com.prismadoc.rest-api/fields "
+  class CDATA "- topic/parml rest-api/fields "
   xmlns CDATA #FIXED ''>
 <!ATTLIST field
-  class CDATA "- topic/plentry com.prismadoc.rest-api/arg "
+  class CDATA "- topic/plentry rest-api/field "
   xmlns CDATA #FIXED ''
   importance (required|optional) #IMPLIED>
 <!ATTLIST type 
-  format (str|int|bool|float|object) #REQUIRED
-  class CDATA "- topic/ph com.prismadoc.rest-api/type "
+  format (str|int|bool|float|object|array) #REQUIRED
+  class CDATA "- topic/entry rest-api/type "
   >
 <!ATTLIST http
-  class CDATA "- topic/bodydiv com.prismadoc.rest-api/http "
+  class CDATA "- topic/bodydiv rest-api/http "
   xmlns CDATA #FIXED ''>
 <!ATTLIST return
-  class CDATA "- topic/bodydiv com.prismadoc.rest-api/return "
+  class CDATA "- topic/bodydiv rest-api/return "
   xmlns CDATA #FIXED ''>
 <!ATTLIST verb
-  class CDATA "- topic/codeblock com.prismadoc.rest-api/verb "
+  class CDATA "- topic/codeblock rest-api/verb "
   xmlns CDATA #FIXED ''>
 <!ATTLIST headers
-  class CDATA "- topic/parml com.prismadoc.rest-api/headers "
+  class CDATA "- topic/parml rest-api/headers "
   xmlns CDATA #FIXED ''>
 <!ATTLIST resource
-  class CDATA "- topic/codeblock com.prismadoc.rest-api/resource "
+  class CDATA "- topic/codeblock rest-api/resource "
   xmlns CDATA #FIXED ''>
 <!ATTLIST status
-  class CDATA "- topic/bodydiv com.prismadoc.rest-api/status "
+  class CDATA "- topic/bodydiv rest-api/status "
   xmlns CDATA #FIXED ''>
 <!ATTLIST code
-  class CDATA "- topic/codeblock com.prismadoc.rest-api/code "
+  class CDATA "- topic/codeblock rest-api/code "
   xmlns CDATA #FIXED ''>
 <!ATTLIST msg
-  class CDATA "- topic/codeblock com.prismadoc.rest-api/msg "
+  class CDATA "- topic/codeblock rest-api/msg "
   xmlns CDATA #FIXED ''>
 <!ATTLIST format
-  class CDATA "- topic/codeblock com.prismadoc.rest-api/format "
+  class CDATA "- topic/codeblock rest-api/format "
   xmlns CDATA #FIXED ''>
 <!ATTLIST descr
   %p.attributes;
-  class CDATA "- topic/p com.prismadoc.rest-api/descr ">
+  class CDATA "- topic/entry rest-api/descr ">
 
 <!-- ================================= End of file ================================== -->

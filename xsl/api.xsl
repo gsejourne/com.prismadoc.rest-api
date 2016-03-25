@@ -3,7 +3,11 @@
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	exclude-result-prefixes="xs">
 	
-	<xsl:template match="*[contains(@class, ' com.prismadoc.rest-api/apiref ')]/*[contains(@class, ' topic/title ')]">
+	<xsl:template name="gen-user-styles">
+		<link rel="stylesheet" type="text/css" href="{$PATH2PROJ}{$CSSPATH}css/api.css"/><xsl:value-of select="$newline"/>
+	</xsl:template>
+	
+	<xsl:template match="*[contains(@class, ' rest-api/apiref ')]/*[contains(@class, ' topic/title ')]">
 		<xsl:param name="headinglevel" as="xs:integer">
 			<xsl:choose>
 				<xsl:when test="count(ancestor::*[contains(@class, ' topic/topic ')]) > 6">6</xsl:when>
@@ -25,35 +29,46 @@
 				<xsl:text> </xsl:text>
 				<xsl:value-of select="/apiref/apibody/request/http/resource"/>
 			</samp></b></p>
-			<xsl:apply-templates select="../*[contains(@class, ' com.prismadoc.rest-api/shortdesc ')]"></xsl:apply-templates>
+			<xsl:apply-templates select="../*[contains(@class, ' rest-api/shortdesc ')]"></xsl:apply-templates>
 		</header>
 	</xsl:template>
-	<xsl:template match="*[contains(@class, ' com.prismadoc.rest-api/verb ')]"/>
-	<xsl:template match="*[contains(@class, ' com.prismadoc.rest-api/resource ')]"/>
-	<xsl:template match="*[contains(@class, ' com.prismadoc.rest-api/request ')]">
+	<xsl:template match="*[contains(@class, ' rest-api/headers')]">
+		<h3>
+			<xsl:call-template name="commonattributes"/>
+			Headers
+		</h3>
+		<xsl:apply-templates/>
+	</xsl:template>
+	
+	<xsl:template match="*[contains(@class, ' rest-api/verb ')]"/>
+	<xsl:template match="*[contains(@class, ' rest-api/resource ')]"/>
+	<xsl:template match="*[contains(@class, ' rest-api/request ')]">
 		<hr/>
 		<section>
 			<h2>Request</h2>
 			<xsl:apply-templates/>
 		</section>
 	</xsl:template>
-	<xsl:template match="*[contains(@class, ' com.prismadoc.rest-api/response ')]">
+	<xsl:template match="*[contains(@class, ' rest-api/response ')]">
 		<hr/>
 		<section>
 			<h2>Response</h2>
 			<xsl:apply-templates/>
 		</section>
 	</xsl:template>
-	<xsl:template match="*[contains(@class, ' com.prismadoc.rest-api/parameters ')]">
-		<h3>Request Parameters</h3>
-		<table class="parameters">
+	<xsl:template match="*[contains(@class, ' rest-api/fields ')]">
+		<xsl:if test="parent::*[contains(@class, ' rest-api/reqbody ')]">
+			<h3 class="title sectiontitle reqparams">Request Parameters</h3>
+		</xsl:if>
+		<xsl:if test="parent::*[contains(@class, ' rest-api/resbody ')]">
+			<h3 class="title sectiontitle resparams">Response Body</h3>
+		</xsl:if>
+		<table class="fields">
 			<xsl:call-template name="commonattributes"/>
 			<thead>
 				<tr>
 					<th>Parameter</th>
-					<th>Optional</th>
-					<th>Data Type</th>
-					<th rowspan="3">Description</th>
+					<th>Description</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -61,19 +76,35 @@
 			</tbody>
 		</table>
 	</xsl:template>
-	<xsl:template match="*[contains(@class, ' com.prismadoc.rest-api/field ')]">
-		<tr class="field">
-			<td class="parmname"><samp class="ph codeph"><xsl:apply-templates select="parmname"/></samp></td>
-			<td class="importance">
-				<xsl:if test="@importance = 'optional'">
-				<span class="optional">Yes</span>
+	<xsl:template match="*[contains(@class, ' topic/dt ')]">
+		<dt>
+			<xsl:call-template name="commonattributes"/>
+			<xsl:if test="@importance = 'required'">
+				<span class="importance required"/>
+			</xsl:if>
+			<xsl:apply-templates/>
+		</dt>
+	</xsl:template>
+	<xsl:template match="*[contains(@class, ' rest-api/field ')]">
+		<xsl:variable name="fieldID" select="generate-id()"/>
+		<tr class="field" id="{$fieldID}">
+			<td class="id">
+				<xsl:if test="@importance = 'required'">
+					<span class="importance required"/>
 				</xsl:if>
+				<div class="parmname">
+					<xsl:call-template name="commonattributes"/>
+					<xsl:apply-templates select="parmname"/>
+				</div>
+				<div class="type"><xsl:apply-templates select="type" mode="api"/></div>
 			</td>
-			<td class="type"><xsl:apply-templates select="type" mode="api"/></td>
-			<td class="desc"><xsl:apply-templates select="descr"/></td>
+			<td class="descr">
+				<xsl:apply-templates select="descr"/>
+				<xsl:apply-templates select="fields"/>
+			</td>
 		</tr>
 	</xsl:template>
-	<xsl:template match="*[contains(@class, ' com.prismadoc.rest-api/type ')]" mode="api">
+	<xsl:template match="*[contains(@class, ' rest-api/type ')]" mode="api">
 		<samp class="ph codeph api">
 		<xsl:choose>
 			<xsl:when test="@format = 'bool'">boolean</xsl:when>
@@ -86,13 +117,10 @@
 	
 	<xsl:template match="//response/http/return">
 		<h3>Return Status</h3>
-		<table>
-			<xsl:call-template name="commonattributes"/>
+		<table class="table fields">
 			<thead>
 				<tr>
 					<th>Return Code</th>
-					<th>Message</th>
-					<th>MIME Type</th>
 					<th>Description</th>
 				</tr>
 			</thead>
@@ -101,22 +129,28 @@
 			</tbody>
 		</table>
 	</xsl:template>
-	<xsl:template match="*[contains(@class, ' com.prismadoc.rest-api/status ')]">
-		<tr>
-			<xsl:apply-templates mode="return_codes"/>
+	<xsl:template match="*[contains(@class, ' rest-api/status ')]">
+		<tr class="field">
+			<td class="id">
+				<div class="parmname">
+					<xsl:apply-templates select="code"/>
+				</div>
+				<div class="type"><xsl:apply-templates select="format"/></div>
+			</td>
+			<td class="descr">
+				<xsl:apply-templates select="descr"/>
+			</td>
 		</tr>
 	</xsl:template>
-	<xsl:template match="*[contains(@class, ' com.prismadoc.rest-api/code ')]" mode="return_codes">
-		<td><b><samp class="ph codeph"><xsl:apply-templates/></samp></b></td>
+	<xsl:template match="*[contains(@class, ' rest-api/code ')]">
+		<xsl:apply-templates/>
 	</xsl:template>
-	<xsl:template match="*[contains(@class, ' com.prismadoc.rest-api/msg ')]" mode="return_codes">
-		<td><xsl:apply-templates/></td>
+	<xsl:template match="*[contains(@class, ' rest-api/msg ')]"/>
+	<xsl:template match="*[contains(@class, ' rest-api/format ')]">
+		<samp class="ph codeph"><xsl:apply-templates/></samp>
 	</xsl:template>
-	<xsl:template match="*[contains(@class, ' com.prismadoc.rest-api/format ')]" mode="return_codes">
-		<td><samp class="ph codeph"><xsl:apply-templates/></samp></td>
-	</xsl:template>
-	<xsl:template match="*[contains(@class, ' com.prismadoc.rest-api/descr ')]" mode="return_codes">
-		<td><xsl:apply-templates/></td>
+	<xsl:template match="*[contains(@class, ' rest-api/descr ')]">
+		<xsl:apply-templates/>
 	</xsl:template>
 	
 </xsl:stylesheet>
