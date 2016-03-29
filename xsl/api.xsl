@@ -115,7 +115,7 @@
 			<td class="descr">
 				<xsl:apply-templates select="descr"/>
 				<xsl:if test="fields">
-					<p><span class="toggle plus" onclick="javascript:toggle('{$fieldID}');"
+					<p><span id="{concat('TOG',generate-id())}" class="toggle plus" onclick="javascript:toggle(this.id,'{$fieldID}');"
 						title="Toggle object definitions">
 						</span></p>
 				</xsl:if>
@@ -181,17 +181,23 @@
 	<xsl:template match="*[contains(@class, ' rest-api/apibody ')]">
 		<xsl:apply-templates/>
 		<script>
-			<xsl:text disable-output-escaping="yes">function toggle(id) {
-				var list = document.getElementsByClassName(id);
-				for (i = 0; i &lt; list.length; i++) {
-				var el = document.getElementById(list[i].id);
-				if (el.style.display == 'none') {
-				el.style.display = 'table-row';
-				} else {
-				el.style.display = 'none';
-				}
-				}
-			};</xsl:text>
+<xsl:text disable-output-escaping="yes">function toggle(it, id) {
+	var list = document.getElementsByClassName(id);
+	var tog = document.getElementById(it);
+	if (tog.className.match(/(?:^|\s)plus(?!\S)/)) {
+		tog.className = 'toggle minus';
+	} else {
+		tog.className = 'toggle plus';
+	}
+	for (i = 0; i &lt; list.length; i++) {
+		var el = document.getElementById(list[i].id);
+		if (el.style.display == 'none') {
+			el.style.display = 'table-row';
+		} else {
+			el.style.display = 'none';
+		}
+	}
+};</xsl:text>
 		</script>
 	</xsl:template>
 	

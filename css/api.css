@@ -22,9 +22,15 @@ table.fields {
     border: 0;
     font-family: medium-content-sans-serif-font, 'Garuda', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Arial, sans-serif;
     border-spacing: 0;
-    padding-left: 3em;
+}
+.reqbody .fields, .resbody .fields {
+	padding-left: 3em;
+}
+table.fields th:first-child {
+	padding-right: 40px;
 }
 table.fields th {
+	color: #333;
     text-align: left;
     font-weight: bold;
     padding: 10px;
@@ -43,6 +49,7 @@ table.fields tr.field td.id{
     padding: 10px;
     text-align: right;
     padding-right: 40px;
+    vertical-align: top;
 }
 .field  .id > span.importance, .dt> span.importance {
     float: left;
@@ -85,11 +92,11 @@ table.fields tr.field td.descr {
 	padding: 10px;
 }
 .http .parml {
-	
+	display: table-row;
 }
 .http .parml .dt {
 	border-top: 1px solid #CCC;
-    min-width: 200px;
+    max-width: 250px;
     width: 20%;
     padding: 10px;
     text-align: right;
@@ -97,12 +104,12 @@ table.fields tr.field td.descr {
     font-weight: bold;
     text-align: right;
     color: #333;
-    display: inline-block;
+    display: table-cell;
     line-height: 22pt;
     font-size: 1em;
 }
 .http .parml .dd {
-	display: inline-block;
+	display: table-cell;
 	border-top: 1px solid #CCC;
 	padding: 10px;
 	line-height: 22pt;
@@ -130,9 +137,15 @@ table.fields tr.field td.descr {
 }
 .hide {display: none;}
 
-.toggle.icon {
+.toggle {
 	font-weight: bold;
 	font-size: 2em;
 	color: #297aa3;
 	cursor: pointer;
+}
+.toggle.plus:before {
+	content: '+';
+}
+.toggle.minus:before {
+	content: '-';
 }

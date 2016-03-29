@@ -82,7 +82,7 @@ PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
   class CDATA "- topic/body rest-api/request "
   xmlns CDATA #FIXED ''>
 <!ATTLIST response
-  class CDATA "- topic/body rest-api/request "
+  class CDATA "- topic/body rest-api/response "
   xmlns CDATA #FIXED ''>
 <!ATTLIST reqbody
   class CDATA "- topic/section rest-api/reqbody "
