@@ -55,9 +55,9 @@ PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
 
 <!ELEMENT apibody (request,response)>
 <!ELEMENT request (http,example+,reqbody)>
-<!ELEMENT response (http,example,resbody)>
+<!ELEMENT response (http,example,resbody*)>
 <!ELEMENT reqbody (fields)?>
-<!ELEMENT resbody (fields)?>
+<!ELEMENT resbody (%title;?,((%basic.block;) | fields)*)>
 <!ELEMENT fields (field)+>
 <!ELEMENT field (parmname,type,descr?,fields*)>
 <!ELEMENT type EMPTY>

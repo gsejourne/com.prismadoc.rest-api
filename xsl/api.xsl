@@ -85,7 +85,15 @@
 			</tbody>
 		</table>
 	</xsl:template>
-	
+	<xsl:template match="*[contains(@class, ' rest-api/request ')]/*[contains(@class, ' topic/example ')]|
+		*[contains(@class, ' rest-api/response ')]/*[contains(@class, ' topic/example ')]">
+		<div class="example">
+			<xsl:if test="title">
+				<span class="showCtnt off"> </span>
+			</xsl:if>
+			<xsl:apply-templates/>
+		</div>
+	</xsl:template>
 	<xsl:template match="*[contains(@class, ' rest-api/field ')]">
 		<xsl:param name="parents"/>
 		<xsl:variable name="fieldID" select="generate-id()"/>

@@ -15,7 +15,7 @@ a, a:visited {
 	color: #3399CC;
 }
 a:hover {
-	color: #297aa3;
+	color: #3399CC;
 }
 table.fields {
     width: 100%;
@@ -133,7 +133,12 @@ table.fields tr.field td.descr {
 	font-size: 1.1em;
 	color: #297aa3;
 	margin: 0;
-	
+	cursor: pointer;
+}
+.example .pre {
+/*
+	display: none;
+*/
 }
 .hide {display: none;}
 
