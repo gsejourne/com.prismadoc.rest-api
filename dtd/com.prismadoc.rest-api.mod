@@ -89,6 +89,7 @@ PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
   format (query|json) #IMPLIED
   xmlns CDATA #FIXED ''>
 <!ATTLIST resbody
+  id ID #IMPLIED
   class CDATA "- topic/section rest-api/resbody "
   xmlns CDATA #FIXED ''>
 <!ATTLIST fields
