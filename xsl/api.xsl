@@ -96,6 +96,7 @@
 	</xsl:template>
 	<xsl:template match="*[contains(@class, ' rest-api/field ')]">
 		<xsl:param name="parents"/>
+		<xsl:param name="id"/>
 		<xsl:variable name="fieldID" select="generate-id()"/>
 		<xsl:variable name="toggleClass">
 			<xsl:value-of select="$parents"/>
@@ -110,7 +111,7 @@
 				<xsl:if test="$parents != ''"><xsl:value-of select="$toggleClass"/> hide</xsl:if>
 				<xsl:text> field </xsl:text>
 			</xsl:attribute>
-			<td class="id">
+			<td id="{$id}" class="id">
 				<xsl:if test="@importance = 'required'">
 					<span class="importance required"/>
 				</xsl:if>
@@ -125,7 +126,16 @@
 				<xsl:if test="fields">
 					<p><span id="{concat('TOG',generate-id())}" class="toggle plus" onclick="javascript:toggle(this.id,'{$fieldID}');"
 						title="Toggle object definitions">
-						</span></p>
+						</span>
+						See Object <a class="ph codeph">
+							<xsl:attribute name="href">
+								<xsl:text>#</xsl:text>
+								<xsl:value-of select="translate($ancestor_objects,'.','_')"/>
+								<xsl:value-of select="parmname"/>
+							</xsl:attribute>
+							<xsl:value-of select="$ancestor_objects"/><xsl:apply-templates select="parmname"/>
+						</a> below.
+					</p>
 				</xsl:if>
 			</td>
 		</tr>
@@ -135,6 +145,10 @@
 				<xsl:text> </xsl:text>
 				<xsl:value-of select="$fieldID"/>
 				<xsl:text> </xsl:text>
+			</xsl:with-param>
+			<xsl:with-param name="id">
+				<xsl:value-of select="translate($ancestor_objects,'.','_')"/>
+				<xsl:value-of select="parmname"/>
 			</xsl:with-param>
 		</xsl:apply-templates>
 	</xsl:template>

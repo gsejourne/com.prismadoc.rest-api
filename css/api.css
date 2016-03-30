@@ -87,6 +87,13 @@ table.fields tr.field td.descr {
        text-align: left;
        width: 80%;
 }
+.field .descr p {
+    margin: 0;
+}
+.ph.codeph {
+    font-family: Courier, courier, fixed, monospace;
+    font-size: 1.1em;
+}
 .http {
 	margin-left: 3em;
 	padding: 10px;
@@ -140,8 +147,8 @@ table.fields tr.field td.descr {
 	display: none;
 */
 }
-.hide {display: none;}
-
+/*.hide {display: none;} */
+/*
 .toggle {
 	font-weight: bold;
 	font-size: 2em;
@@ -154,3 +161,4 @@ table.fields tr.field td.descr {
 .toggle.minus:before {
 	content: '-';
 }
+*/
