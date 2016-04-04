@@ -63,9 +63,10 @@ td.importance span.required {
     color: #3399CC;
 }
 td.importance span.required:before {
-    content: "*";
+    content: "•";
     font-weight: bold;
-    font-size: 20pt;
+    font-size: 30pt;
+    line-height: 16pt;
 }
 .field .id div.parmname {
     font-weight: bold;
