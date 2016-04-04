@@ -77,6 +77,7 @@
 			<thead>
 				<tr>
 					<th>Parameter</th>
+					<th>Required</th>
 					<th>Description</th>
 				</tr>
 			</thead>
@@ -112,14 +113,17 @@
 				<xsl:text> field </xsl:text>
 			</xsl:attribute>
 			<td id="{$id}" class="id">
-				<xsl:if test="@importance = 'required'">
-					<span class="importance required"/>
-				</xsl:if>
 				<div class="parmname">
 					<xsl:call-template name="commonattributes"/>
 					<xsl:value-of select="$ancestor_objects"/><xsl:apply-templates select="parmname"/>
 				</div>
 				<div class="type"><xsl:apply-templates select="type" mode="api"/></div>
+			</td>
+			<td class="importance">
+				<xsl:if test="@importance = 'required'">
+					<span class="importance required"/>
+				</xsl:if>
+				<xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
 			</td>
 			<td class="descr">
 				<xsl:apply-templates select="descr"/>

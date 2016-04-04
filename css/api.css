@@ -26,9 +26,6 @@ table.fields {
 .reqbody .fields, .resbody .fields {
 	padding-left: 3em;
 }
-table.fields th:first-child {
-	padding-right: 40px;
-}
 table.fields th {
 	color: #333;
     text-align: left;
@@ -39,26 +36,36 @@ table.fields th:first-child {
     text-align: right;
     font-weight: bold;
 }
-table.fields tr.field {
-
+table.fields td {
+	border-top: 1px solid #ccc;
+	vertical-align: top;
+	padding: 10px;
 }
-table.fields tr.field td.id{
-    border-top: 1px solid #CCC;
+table.fields tr.field td.id {
     min-width: 250px;
     width: 20%;
-    padding: 10px;
     text-align: right;
-    padding-right: 40px;
-    vertical-align: top;
 }
-.field  .id > span.importance, .dt> span.importance {
-    float: left;
+table.fields tr.field td.importance {
+    text-align: center;
+}
+table.fields tr.field td.descr {
+   color: #555;
+   font-size: .9em;
+   text-align: left;
+   width: 80%;
+}
+td.importance span.required {
     font-style: italic;
     color: #ccc;
     font-weight: normal;
+    text-align: center;
+    color: #3399CC;
 }
-.field  .id > span.required:before, .dt > span.required:before {
-    content: "Required";
+td.importance span.required:before {
+    content: "*";
+    font-weight: bold;
+    font-size: 20pt;
 }
 .field .id div.parmname {
     font-weight: bold;
@@ -77,15 +84,6 @@ table.fields tr.field td.id{
 }
 .field .id div.type:after {
     content: "]";
-}
-table.fields tr.field td.descr {
-       border-top: 1px solid #CCC;
-       padding: 10px;
-       color: #555;
-       font-size: .9em;
-       vertical-align: top;
-       text-align: left;
-       width: 80%;
 }
 .field .descr p {
     margin: 0;
