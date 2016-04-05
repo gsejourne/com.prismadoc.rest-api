@@ -104,10 +104,10 @@ PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
   class CDATA "- topic/entry rest-api/type "
   >
 <!ATTLIST http
-  class CDATA "- topic/bodydiv rest-api/http "
+  class CDATA "- topic/table rest-api/http "
   xmlns CDATA #FIXED ''>
 <!ATTLIST return
-  class CDATA "- topic/bodydiv rest-api/return "
+  class CDATA "- topic/tbody rest-api/return "
   xmlns CDATA #FIXED ''>
 <!ATTLIST verb
   class CDATA "- topic/codeblock rest-api/verb "
@@ -119,16 +119,16 @@ PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
   class CDATA "- topic/codeblock rest-api/resource "
   xmlns CDATA #FIXED ''>
 <!ATTLIST status
-  class CDATA "- topic/bodydiv rest-api/status "
+  class CDATA "- topic/row rest-api/status "
   xmlns CDATA #FIXED ''>
 <!ATTLIST code
-  class CDATA "- topic/codeblock rest-api/code "
+  class CDATA "- topic/entry rest-api/code "
   xmlns CDATA #FIXED ''>
 <!ATTLIST msg
-  class CDATA "- topic/codeblock rest-api/msg "
+  class CDATA "- topic/entry rest-api/msg "
   xmlns CDATA #FIXED ''>
 <!ATTLIST format
-  class CDATA "- topic/codeblock rest-api/format "
+  class CDATA "- topic/entry rest-api/format "
   xmlns CDATA #FIXED ''>
 <!ATTLIST descr
   %p.attributes;
