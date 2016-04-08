@@ -54,8 +54,8 @@ PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
 
 
 <!ELEMENT apibody (request,response)>
-<!ELEMENT request (http,example+,reqbody)>
-<!ELEMENT response (http,example,resbody*)>
+<!ELEMENT request (%title;?,(%basic.block;)?,http,example+,reqbody?)>
+<!ELEMENT response (%title;?,(%basic.block;)?,http,example,resbody*)>
 <!ELEMENT reqbody (fields)?>
 <!ELEMENT resbody (%title;?,((%basic.block;) | fields)*)>
 <!ELEMENT fields (field)+>
@@ -70,7 +70,7 @@ PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
 <!ELEMENT code (#PCDATA)>
 <!ELEMENT msg (#PCDATA)>
 <!ELEMENT format (#PCDATA)>
-<!ELEMENT descr %p.content;>
+<!ELEMENT descr (%defn.cnt;)*>
 <!-- ================================================================================ -->
 <!--                      SPECIALIZATION ATTRIBUTE DECLARATIONS                       -->
 <!-- ================================================================================ -->
@@ -96,8 +96,11 @@ PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
   class CDATA "- topic/parml rest-api/fields "
   xmlns CDATA #FIXED ''>
 <!ATTLIST field
+  %global-atts;
+  %conref-atts;
   class CDATA "- topic/plentry rest-api/field "
   xmlns CDATA #FIXED ''
+  id ID #IMPLIED
   importance (required|optional) #IMPLIED>
 <!ATTLIST type 
   format (str|int|bool|float|object|array) #REQUIRED

@@ -29,30 +29,18 @@
         <codeblock></codeblock>
       </example>
       <reqbody>
-        <parameters>
+        <fields>
           <field importance="required">
             <parmname></parmname>
             <type format="str"/>
             <descr></descr>
           </field>
-		</parameters>
+    		</fields>
       </reqbody>
     </request>
     <response>
       <http>
         <return>
-          <status>
-            <code></code>
-            <msg></msg>
-            <format></format>
-            <descr></descr>
-          </status>
-          <status>
-            <code></code>
-            <msg></msg>
-            <format></format>
-            <descr></descr>
-          </status>
           <status>
             <code></code>
             <msg></msg>
