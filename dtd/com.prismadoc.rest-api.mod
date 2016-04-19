@@ -55,13 +55,13 @@ PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
 
 <!ELEMENT apibody (request,response)>
 <!ELEMENT request (%title;?,(%basic.block;)?,http,example+,reqbody?)>
-<!ELEMENT response (%title;?,(%basic.block;)?,http,example,resbody*)>
-<!ELEMENT reqbody (fields)?>
+<!ELEMENT response (%title;?,(%basic.block;)?,http,example*,resbody*)>
+<!ELEMENT reqbody (%title;?,((%basic.block;) | fields)*)>
 <!ELEMENT resbody (%title;?,((%basic.block;) | fields)*)>
 <!ELEMENT fields (field)+>
 <!ELEMENT field (parmname,type,descr?,fields*)>
 <!ELEMENT type EMPTY>
-<!ELEMENT http (return|(verb,resource,headers))>
+<!ELEMENT http ((return,headers?)|(verb,resource,headers))>
 <!ELEMENT headers (parml)+ >
 <!ELEMENT return (status)+>
 <!ELEMENT verb (#PCDATA)>
@@ -85,19 +85,30 @@ PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
   class CDATA "- topic/body rest-api/response "
   xmlns CDATA #FIXED ''>
 <!ATTLIST reqbody
+  %global-atts;
+  %select-atts;
+  %conref-atts;
   class CDATA "- topic/section rest-api/reqbody "
   format (query|json) #IMPLIED
   xmlns CDATA #FIXED ''>
 <!ATTLIST resbody
   id ID #IMPLIED
+  %global-atts;
+  %select-atts;
+  %conref-atts;
   class CDATA "- topic/section rest-api/resbody "
   xmlns CDATA #FIXED ''>
 <!ATTLIST fields
+  %global-atts;
+  %select-atts;
+  %conref-atts;
+  id ID #IMPLIED
   class CDATA "- topic/parml rest-api/fields "
   xmlns CDATA #FIXED ''>
 <!ATTLIST field
   %global-atts;
   %conref-atts;
+  %select-atts;
   class CDATA "- topic/plentry rest-api/field "
   xmlns CDATA #FIXED ''
   id ID #IMPLIED
@@ -107,9 +118,13 @@ PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
   class CDATA "- topic/entry rest-api/type "
   >
 <!ATTLIST http
-  class CDATA "- topic/table rest-api/http "
+  class CDATA "- topic/section rest-api/http "
   xmlns CDATA #FIXED ''>
 <!ATTLIST return
+  %global-atts;
+  %conref-atts;
+  %select-atts;
+  id ID #IMPLIED
   class CDATA "- topic/tbody rest-api/return "
   xmlns CDATA #FIXED ''>
 <!ATTLIST verb
@@ -122,6 +137,10 @@ PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
   class CDATA "- topic/codeblock rest-api/resource "
   xmlns CDATA #FIXED ''>
 <!ATTLIST status
+  id    ID  #IMPLIED
+  %global-atts;
+  %conref-atts;
+  %select-atts;
   class CDATA "- topic/row rest-api/status "
   xmlns CDATA #FIXED ''>
 <!ATTLIST code

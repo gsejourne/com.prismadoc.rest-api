@@ -28,6 +28,10 @@ PUBLIC "-//GSEJOURNE//DTD DITA DITA REST API Specialization  (hi-d pr-d sw-d ut-
   PUBLIC "-//OASIS//ENTITIES DITA 1.2 Utilities Domain//EN"
          "../../../dtd/base/dtd/utilitiesDomain.ent">
 %ut-d-dec;
+<!ENTITY % ui-d-dec     
+  PUBLIC "-//OASIS//ENTITIES DITA 1.2 User Interface Domain//EN" 
+         "../../../dtd/technicalContent/dtd/uiDomain.ent"                                                       
+>%ui-d-dec;
 
 <!-- ================================================================================ -->
 <!--                                DOMAIN EXTENSIONS                                 -->
@@ -40,7 +44,8 @@ PUBLIC "-//GSEJOURNE//DTD DITA DITA REST API Specialization  (hi-d pr-d sw-d ut-
 <!ENTITY % ph           "ph |
                          %hi-d-ph; |
                          %pr-d-ph; |
-                         %sw-d-ph;
+                         %sw-d-ph; |
+                         %ui-d-ph;
                         ">
 <!ENTITY % dl           "dl |
                          %pr-d-dl;
