@@ -67,7 +67,7 @@ PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
 <!ELEMENT verb (#PCDATA)>
 <!ELEMENT resource (#PCDATA)>
 <!ELEMENT status (code,msg,format,descr)>
-<!ELEMENT code (#PCDATA)>
+<!ELEMENT code (%defn.cnt;)*>
 <!ELEMENT msg (#PCDATA)>
 <!ELEMENT format (#PCDATA)>
 <!ELEMENT descr (%defn.cnt;)*>
