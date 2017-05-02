@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings xml:lang="en-US">
+	<!-- Custom strings for API types -->
+	<str name="Input-svg">artwork/params-input.svg</str>
+	<str name="Output-svg">artwork/params-output.svg</str>
+	<str name="Stages-svg">artwork/stage-availability.svg</str>
+	<str name="Usage-svg">artwork/usage.svg</str>
+	<str name="Input">Input Parameters</str>
+	<str name="Output">Returns</str>
+	<str name="Stages">SMTP Stages</str>
+	<str name="Usage">Usage</str>
+</strings>

@@ -1,0 +1,46 @@
+body {
+	margin: 20px;
+}
+h2.panel-heading {
+	margin-top: 0;
+}
+kbd.smtp-stage {
+	line-height: 20pt;
+	font-size: 1.2em;
+	padding: 0.4em 0.5em 0.2em;
+	background-color: #333;
+}
+dl.parml dt {
+	margin-top: 0.7em;
+	font-family: "Source Sans Pro", Courier, Monospace, fixed, sans-serif;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+dl.parml dd {
+	margin-left: 1em;
+}
+.codeblock {
+	background-color: #444;
+	color: #fff;
+}
+.field .fieldname {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 1.1em;
+	font-family: "Open Sans", Courier, Monospace, fixed, sans-serif;
+}
+.field .fieldtype {
+	display: block;
+	padding: 5px;
+	padding-left: 15px;
+}
+.importance {
+	text-align: center;
+}
+.importance span.required {
+	font-size: 30pt;
+	line-height: 20px;
+	padding-top: 5px;
+	color: #c7254e;
+	font-family: "Source Sans Pro", Courier, Monospace, fixed, sans-serif;
+}

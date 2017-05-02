@@ -1,7 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <plugin id="org.dita.specialization.com.prismadoc.rest-api">
+  <require plugin="org.dita.html5"/>
+  <require plugin="org.dita.xhtml"/>
   <feature extension="dita.specialization.catalog.relative" type="file" value="catalog-dita.xml" />
-  <feature extension="dita.xsl.xhtml" file="xsl/api.xsl" type="file"/>
-  <feature extension="dita.xsl.xslfo" file="xsl/fo-api.xsl" type="file"/>
-  <feature extension="dita.conductor.target.relative" file="conductor.xml" type="file"/>
+  <feature extension="dita.xsl.xhtml" file="xsl/api2xhtml.xsl" type="file"/>
+  <feature extension="dita.xsl.html5" file="xsl/api2html5.xsl" type="file"/>
+  <feature extension="dita.xsl.xslfo" file="xsl/api2fo.xsl" type="file"/>
+  <feature extension="dita.xsl.strings" file="xsl/common/strings.xml"/>
+  <feature extension="dita.conductor.target.relative" file="integrator.xml" type="file"/>
 </plugin>

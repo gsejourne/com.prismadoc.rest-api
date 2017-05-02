@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Provide strings for my plug-in; this plug-in supports
+     English, French, Japanese and Italian. -->
+<langlist>
+  <lang xml:lang="en"		filename="api-strings-en.xml"/>
+  <lang xml:lang="en-US"	filename="api-strings-en.xml"/>
+  <lang xml:lang="fr"     	filename="api-strings-fr.xml"/>
+  <lang xml:lang="fr-FR"	filename="api-strings-fr.xml"/>
+  <lang xml:lang="it"		filename="api-strings-it.xml"/>
+  <lang xml:lang="it-IT"	filename="api-strings-it.xml"/>
+  <lang xml:lang="jp"		filename="api-strings-jp.xml"/>
+  <lang xml:lang="jp-JP"	filename="api-strings-jp.xml"/>
+</langlist>
