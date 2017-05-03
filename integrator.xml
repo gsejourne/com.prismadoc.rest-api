@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="com.prismadoc.rest-api">
-    <target name="copy-css-api" depends="copy-css" description="Copy API plugin styles">
+    <target name="dita2html5" depends="html5.init, build-init, preprocess, html5.topic, html5.map, api-css, html5.css"/>
+    <!-- <target name="api-css" depends="copy-css" description="Copy API plugin styles">
         <echo>* [REST-API Plugin]: Copying CSS for REST-API specialization</echo>
         <mkdir dir="${output.css.path}"/>
         <copy todir="${output.css.path}">
             <fileset dir="${dita.plugin.org.dita.specialization.com.prismadoc.rest-api}/css" includes="**"/>
         </copy>
+    </target> -->
+    <target name="api-css">
+    	<echo>* [REST-API Plugin]: Copying CSS for REST-API specialization</echo>
+		<property name="user.csspath.real" location="${output.dir}/${user.csspath}"/>
+		<mkdir dir="${user.csspath.real}/css"/>
+		<copy todir="${user.csspath.real}/css">
+			<fileset dir="${dita.plugin.org.dita.specialization.com.prismadoc.rest-api.dir}/css" includes="**/*"/>
+		</copy>
     </target>
 </project>

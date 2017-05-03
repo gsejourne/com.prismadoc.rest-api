@@ -1,6 +1,21 @@
 body {
 	margin: 20px;
 }
+section {
+	border: 1px solid #ccc;
+	background-color: #ececec;
+	padding: 5px;
+	border-radius: 5px;
+	margin-bottom: 25px;
+}
+.row.section {
+	border-top: 1px solid #555;
+	margin-bottom: 1em;
+}
+h1, h2, h3, h4 {
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	font-weight: 600;
+}
 h2.panel-heading {
 	margin-top: 0;
 }
@@ -43,4 +58,17 @@ dl.parml dd {
 	padding-top: 5px;
 	color: #c7254e;
 	font-family: "Source Sans Pro", Courier, Monospace, fixed, sans-serif;
+}
+.rightcol {
+	background-color: #555;
+}
+.param_list_header, .code_table_headers {
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	font-weight: bold;
+	line-height: 1.2em;
+	border-bottom: 1px solid #8c8c8c;
+    height: 30px;
+    vertical-align: middle;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
