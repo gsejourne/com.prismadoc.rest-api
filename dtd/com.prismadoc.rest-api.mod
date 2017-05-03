@@ -103,19 +103,25 @@ PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
   %select-atts;
   %conref-atts;
   id ID #IMPLIED
-  class CDATA "- topic/parml rest-api/fields "
+  class CDATA "- reference/properties rest-api/fields "
   xmlns CDATA #FIXED ''>
 <!ATTLIST field
   %global-atts;
   %conref-atts;
   %select-atts;
-  class CDATA "- topic/plentry rest-api/field "
+  class CDATA "- reference/property rest-api/field "
   xmlns CDATA #FIXED ''
   id ID #IMPLIED
   importance (required|optional) #IMPLIED>
+<!ATTLIST  parmname
+  %global-atts;
+  %select-atts;
+  class CDATA "- reference/proptype rest-api/parmname "
+  xmlns CDATA #FIXED ''
+>
 <!ATTLIST type 
   format (str|int|bool|float|object|array) #REQUIRED
-  class CDATA "- topic/entry rest-api/type "
+  class CDATA "- reference/propvalue rest-api/type "
   >
 <!ATTLIST http
   class CDATA "- topic/section rest-api/http "
@@ -125,7 +131,7 @@ PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
   %conref-atts;
   %select-atts;
   id ID #IMPLIED
-  class CDATA "- topic/tbody rest-api/return "
+  class CDATA "- reference/properties rest-api/return "
   xmlns CDATA #FIXED ''>
 <!ATTLIST verb
   class CDATA "- topic/codeblock rest-api/verb "
@@ -141,19 +147,19 @@ PUBLIC "-//GSEJOURNE//ELEMENTS DITA API Reference//EN"
   %global-atts;
   %conref-atts;
   %select-atts;
-  class CDATA "- topic/row rest-api/status "
+  class CDATA "- reference/property rest-api/status "
   xmlns CDATA #FIXED ''>
 <!ATTLIST code
-  class CDATA "- topic/entry rest-api/code "
+  class CDATA "- reference/proptype rest-api/code "
   xmlns CDATA #FIXED ''>
 <!ATTLIST msg
-  class CDATA "- topic/entry rest-api/msg "
+  class CDATA "- reference/propvalue rest-api/msg "
   xmlns CDATA #FIXED ''>
 <!ATTLIST format
-  class CDATA "- topic/entry rest-api/format "
+  class CDATA "- reference/propvalue rest-api/format "
   xmlns CDATA #FIXED ''>
 <!ATTLIST descr
   %p.attributes;
-  class CDATA "- topic/entry rest-api/descr ">
+  class CDATA "- reference/propdesc rest-api/descr ">
 
 <!-- ================================= End of file ================================== -->

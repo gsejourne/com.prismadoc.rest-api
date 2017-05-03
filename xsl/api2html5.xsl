@@ -213,18 +213,5 @@
 		</div>
 	</xsl:template>
 
-	<xsl:template match="*[table:is-tbody-entry(.)][table:is-row-header(.)]">
-		<th scope="row">
-			<xsl:apply-templates select="." mode="table:entry"/>
-			<xsl:message>! DEBUG ! <xsl:value-of select="."/></xsl:message>
-		</th>
-	</xsl:template>
-
-	<xsl:template match="*[table:is-tbody-entry(.)][not(table:is-row-header(.))]" name="topic.entry">
-		<xsl:message>! DEBUG ! <xsl:value-of select="."/></xsl:message>
-		<td>
-			<xsl:apply-templates select="." mode="table:entry"/>
-		</td>
-	</xsl:template>
 	
 </xsl:stylesheet>
